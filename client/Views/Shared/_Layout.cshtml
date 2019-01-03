@@ -41,7 +41,7 @@
     <!-- BEGIN THEME STYLES -->
     <link rel="stylesheet" href="~/css/theme/theme.min.css" data-skin="default">
     <link rel="stylesheet" href="~/css/theme/theme-dark.min.css" data-skin="dark">
-    <link rel="stylesheet" href="~/css/theme/assets/stylesheets/custom.css"><!-- Disable unused skin immediately -->
+    <link rel="stylesheet" href="~/css/theme/custom.css"><!-- Disable unused skin immediately -->
     <script>
     var skin = localStorage.getItem('skin') || 'default';
         var unusedLink = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
@@ -63,7 +63,7 @@
                 <div class="top-bar-brand bg-transparent">
                     <!-- toggle menu -->
                     <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside" aria-label="toggle menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle menu -->
-                    <a href="index.html"><img src="assets/images/brand-inverse.png" alt="" style="height: 32px;width: auto;"></a>
+                    <a href="index.html"><img src="~/images/brand-inverse.png" alt="" style="height: 32px;width: auto;"></a>
                 </div><!-- /.top-bar-brand -->
                 <!-- .top-bar-list -->
                 <div class="top-bar-list">
@@ -99,7 +99,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item unread">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/uifaces15.jpg" alt="">
+                                                <img src="~/images/avatars/uifaces15.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="text"> Jeffrey Wells created a schedule </p><span class="date">Just now</span>
@@ -108,7 +108,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item unread">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/uifaces16.jpg" alt="">
+                                                <img src="~/images/avatars/uifaces16.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="text"> Anna Vargas logged a chat </p><span class="date">3 hours ago</span>
@@ -117,7 +117,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/uifaces17.jpg" alt="">
+                                                <img src="~/images/avatars/uifaces17.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="text"> Sara Carr invited to Stilearn Admin </p><span class="date">5 hours ago</span>
@@ -126,7 +126,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/uifaces18.jpg" alt="">
+                                                <img src="~/images/avatars/uifaces18.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="text"> Arthur Carroll updated a project </p><span class="date">1 day ago</span>
@@ -135,7 +135,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/uifaces19.jpg" alt="">
+                                                <img src="~/images/avatars/uifaces19.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="text"> Hannah Romero created a task </p><span class="date">1 day ago</span>
@@ -144,7 +144,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/uifaces20.jpg" alt="">
+                                                <img src="~/images/avatars/uifaces20.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="text"> Angela Peterson assign a task to you </p><span class="date">2 days ago</span>
@@ -153,7 +153,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/uifaces21.jpg" alt="">
+                                                <img src="~/images/avatars/uifaces21.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="text"> Shirley Mason and 3 others followed you </p><span class="date">2 days ago</span>
@@ -175,7 +175,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item unread">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/team1.jpg" alt="">
+                                                <img src="~/images/avatars/team1.jpg" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="subject"> Stilearning </p>
@@ -185,7 +185,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/team3.png" alt="">
+                                                <img src="~/images/avatars/team3.png" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="subject"> Openlane </p>
@@ -211,7 +211,7 @@
                                         <!-- .dropdown-item -->
                                         <a href="#!" class="dropdown-item">
                                             <div class="user-avatar">
-                                                <img src="assets/images/avatars/team2.png" alt="">
+                                                <img src="~/images/avatars/team2.png" alt="">
                                             </div>
                                             <div class="dropdown-item-body">
                                                 <p class="subject"> Creative Division </p>
@@ -263,7 +263,7 @@
                         </ul><!-- /.nav -->
                         <!-- .btn-account -->
                         <div class="dropdown">
-                            <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-avatar user-avatar-md"><img src="assets/images/avatars/profile.jpg" alt=""></span> <span class="account-summary pr-lg-4 d-none d-lg-block"><span class="account-name">Beni Arisandi</span> <span class="account-description">Marketing Manager</span></span></button>
+                            <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-avatar user-avatar-md"><img src="~/images/avatars/profile.jpg" alt=""></span> <span class="account-summary pr-lg-4 d-none d-lg-block"><span class="account-name">Beni Arisandi</span> <span class="account-description">Marketing Manager</span></span></button>
                             <div class="dropdown-arrow dropdown-arrow-left"></div><!-- .dropdown-menu -->
                             <div class="dropdown-menu">
                                 <h6 class="dropdown-header d-none d-md-block d-lg-none"> Beni Arisandi </h6><a class="dropdown-item" href="user-profile.html"><span class="dropdown-icon oi oi-person"></span> Profile</a> <a class="dropdown-item" href="auth-signin-v1.html"><span class="dropdown-icon oi oi-account-logout"></span> Logout</a>
@@ -283,7 +283,7 @@
                     <!-- toggle menu -->
                     <button class="hamburger hamburger-squeeze" type="button" data-toggle="aside" aria-label="Menu" aria-controls="navigation"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle menu -->
                     <!-- .btn-account -->
-                    <button class="btn-account d-flex d-md-none" type="button" data-toggle="collapse" data-target="#dropdown-aside"><span class="user-avatar user-avatar-lg"><img src="assets/images/avatars/profile.jpg" alt=""></span> <span class="account-icon"><span class="fa fa-caret-down fa-lg"></span></span> <span class="account-summary"><span class="account-name">Beni Arisandi</span> <span class="account-description">Marketing Manager</span></span></button> <!-- /.btn-account -->
+                    <button class="btn-account d-flex d-md-none" type="button" data-toggle="collapse" data-target="#dropdown-aside"><span class="user-avatar user-avatar-lg"><img src="~/images/avatars/profile.jpg" alt=""></span> <span class="account-icon"><span class="fa fa-caret-down fa-lg"></span></span> <span class="account-summary"><span class="account-name">Beni Arisandi</span> <span class="account-description">Marketing Manager</span></span></button> <!-- /.btn-account -->
                     <!-- .dropdown-aside -->
                     <div id="dropdown-aside" class="dropdown-aside d-md-none collapse">
                         <!-- dropdown-items -->
@@ -294,7 +294,7 @@
                     </div><!-- /.dropdown-aside -->
                     <!-- .top-bar-brand -->
                     <div class="top-bar-brand bg-primary">
-                        <a href="index.html"><img src="assets/images/brand-inverse.png" height="32" alt=""></a>
+                        <a href="index.html"><img src="~/images/brand-inverse.png" height="32" alt=""></a>
                     </div><!-- /.top-bar-brand -->
                 </header><!-- /.aside-header -->
                 <!-- .aside-menu -->
@@ -818,7 +818,7 @@
                                             <div class="list-group-item">
                                                 <!-- .list-group-item-figure -->
                                                 <div class="list-group-item-figure">
-                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Martha Myers"><img src="assets/images/avatars/uifaces16.jpg" alt=""></a>
+                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Martha Myers"><img src="~/images/avatars/uifaces16.jpg" alt=""></a>
                                                 </div><!-- /.list-group-item-figure -->
                                                 <!-- .list-group-item-body -->
                                                 <div class="list-group-item-body">
@@ -840,7 +840,7 @@
                                             <div class="list-group-item">
                                                 <!-- .list-group-item-figure -->
                                                 <div class="list-group-item-figure">
-                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Tammy Beck"><img src="assets/images/avatars/uifaces15.jpg" alt=""></a>
+                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Tammy Beck"><img src="~/images/avatars/uifaces15.jpg" alt=""></a>
                                                 </div><!-- /.list-group-item-figure -->
                                                 <!-- .list-group-item-body -->
                                                 <div class="list-group-item-body">
@@ -862,7 +862,7 @@
                                             <div class="list-group-item">
                                                 <!-- .list-group-item-figure -->
                                                 <div class="list-group-item-figure">
-                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Susan Kelley"><img src="assets/images/avatars/uifaces17.jpg" alt=""></a>
+                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Susan Kelley"><img src="~/images/avatars/uifaces17.jpg" alt=""></a>
                                                 </div><!-- /.list-group-item-figure -->
                                                 <!-- .list-group-item-body -->
                                                 <div class="list-group-item-body">
@@ -884,7 +884,7 @@
                                             <div class="list-group-item">
                                                 <!-- .list-group-item-figure -->
                                                 <div class="list-group-item-figure">
-                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Albert Newman"><img src="assets/images/avatars/uifaces18.jpg" alt=""></a>
+                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Albert Newman"><img src="~/images/avatars/uifaces18.jpg" alt=""></a>
                                                 </div><!-- /.list-group-item-figure -->
                                                 <!-- .list-group-item-body -->
                                                 <div class="list-group-item-body">
@@ -906,7 +906,7 @@
                                             <div class="list-group-item">
                                                 <!-- .list-group-item-figure -->
                                                 <div class="list-group-item-figure">
-                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Kyle Grant"><img src="assets/images/avatars/uifaces19.jpg" alt=""></a>
+                                                    <a href="user-profile.html" class="user-avatar" data-toggle="tooltip" title="Kyle Grant"><img src="~/images/avatars/uifaces19.jpg" alt=""></a>
                                                 </div><!-- /.list-group-item-figure -->
                                                 <!-- .list-group-item-body -->
                                                 <div class="list-group-item-body">
@@ -939,7 +939,7 @@
                                             <!-- .lits-group-item-figure -->
                                             <div class="list-group-item-figure">
                                                 <div class="has-badge">
-                                                    <a href="page-project.html" class="tile tile-md bg-purple">LT</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/team4.jpg" alt=""></a>
+                                                    <a href="page-project.html" class="tile tile-md bg-purple">LT</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="~/images/avatars/team4.jpg" alt=""></a>
                                                 </div>
                                             </div><!-- .lits-group-item-figure -->
                                             <!-- .lits-group-item-body -->
@@ -960,7 +960,7 @@
                                             <!-- .lits-group-item-figure -->
                                             <div class="list-group-item-figure">
                                                 <div class="has-badge">
-                                                    <a href="page-project.html" class="tile tile-md bg-indigo">SP</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/team1.jpg" alt=""></a>
+                                                    <a href="page-project.html" class="tile tile-md bg-indigo">SP</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="~/images/avatars/team1.jpg" alt=""></a>
                                                 </div>
                                             </div><!-- .lits-group-item-figure -->
                                             <!-- .lits-group-item-body -->
@@ -981,7 +981,7 @@
                                             <!-- .lits-group-item-figure -->
                                             <div class="list-group-item-figure">
                                                 <div class="has-badge">
-                                                    <a href="page-project.html" class="tile tile-md bg-yellow">OS</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/team2.png" alt=""></a>
+                                                    <a href="page-project.html" class="tile tile-md bg-yellow">OS</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="~/images/avatars/team2.png" alt=""></a>
                                                 </div>
                                             </div><!-- .lits-group-item-figure -->
                                             <!-- .lits-group-item-body -->
@@ -1002,7 +1002,7 @@
                                             <!-- .lits-group-item-figure -->
                                             <div class="list-group-item-figure">
                                                 <div class="has-badge">
-                                                    <a href="page-project.html" class="tile tile-md bg-blue">BA</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/bootstrap.svg" alt=""></a>
+                                                    <a href="page-project.html" class="tile tile-md bg-blue">BA</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="~/images/avatars/bootstrap.svg" alt=""></a>
                                                 </div>
                                             </div><!-- .lits-group-item-figure -->
                                             <!-- .lits-group-item-body -->
@@ -1023,7 +1023,7 @@
                                             <!-- .lits-group-item-figure -->
                                             <div class="list-group-item-figure">
                                                 <div class="has-badge">
-                                                    <a href="page-project.html" class="tile tile-md bg-teal">SB</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/sketch.svg" alt=""></a>
+                                                    <a href="page-project.html" class="tile tile-md bg-teal">SB</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="~/images/avatars/sketch.svg" alt=""></a>
                                                 </div>
                                             </div><!-- .lits-group-item-figure -->
                                             <!-- .lits-group-item-body -->
@@ -1044,7 +1044,7 @@
                                             <!-- .lits-group-item-figure -->
                                             <div class="list-group-item-figure">
                                                 <div class="has-badge">
-                                                    <a href="page-project.html" class="tile tile-md bg-pink">SP</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/team4.jpg" alt=""></a>
+                                                    <a href="page-project.html" class="tile tile-md bg-pink">SP</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="~/images/avatars/team4.jpg" alt=""></a>
                                                 </div>
                                             </div><!-- .lits-group-item-figure -->
                                             <!-- .lits-group-item-body -->
@@ -1172,7 +1172,7 @@
     <script src="~/lib/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
     <script src="~/lib/vendor/chart.js/Chart.min.js"></script> <!-- END PLUGINS JS -->
     <!-- BEGIN THEME JS -->
-    <script src="assets/javascript/theme.min.js"></script> <!-- END THEME JS -->
+    <script src="~/lib/looper/theme.min.js"></script> <!-- END THEME JS -->
     <!-- BEGIN PAGE LEVEL JS -->
     <script src="assets/javascript/pages/dashboard-demo.js"></script> <!-- END PAGE LEVEL JS -->
 </body>
