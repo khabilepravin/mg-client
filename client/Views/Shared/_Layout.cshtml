@@ -63,7 +63,10 @@
                 <div class="top-bar-brand bg-transparent">
                     <!-- toggle menu -->
                     <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside" aria-label="toggle menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle menu -->
-                    <a href="index.html"><img src="~/images/brand-inverse.png" alt="" style="height: 32px;width: auto;"></a>
+                    <a href="index.html">
+                        MovieGrep
+                    @*<img src="~/images/brand-inverse.png" alt="" style="height: 80px;width: auto;">*@
+                    </a>
                 </div><!-- /.top-bar-brand -->
                 <!-- .top-bar-list -->
                 <div class="top-bar-list">
@@ -294,7 +297,10 @@
                     </div><!-- /.dropdown-aside -->
                     <!-- .top-bar-brand -->
                     <div class="top-bar-brand bg-primary">
-                        <a href="index.html"><img src="~/images/brand-inverse.png" height="32" alt=""></a>
+                        <a href="index.html">
+                            @*<img src="~/images/brand-inverse.png" height="32" alt="">*@
+                            <span>MovieGrep</span>
+                        </a>
                     </div><!-- /.top-bar-brand -->
                 </header><!-- /.aside-header -->
                 <!-- .aside-menu -->
@@ -1163,17 +1169,22 @@
     <!-- BEGIN BASE JS -->
     <script src="~/lib/vendor/jquery/jquery.min.js"></script>
     <script src="~/lib/vendor/bootstrap/js/popper.min.js"></script>
-    <script src="~/lib/vendor/bootstrap/js/bootstrap.min.js"></script> <!-- END BASE JS -->
+    <script src="~/lib/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/vue/vue.js"></script>
+    <!-- END BASE JS -->
     <!-- BEGIN PLUGINS JS -->
     <script src="~/lib/vendor/pace/pace.min.js"></script>
     <script src="~/lib/vendor/stacked-menu/stacked-menu.min.js"></script>
     <script src="~/lib/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="~/lib/vendor/flatpickr/flatpickr.min.js"></script>
     <script src="~/lib/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
-    <script src="~/lib/vendor/chart.js/Chart.min.js"></script> <!-- END PLUGINS JS -->
+    <script src="~/lib/vendor/chart.js/Chart.min.js"></script> 
+    <!-- END PLUGINS JS -->
     <!-- BEGIN THEME JS -->
-    <script src="~/lib/looper/theme.min.js"></script> <!-- END THEME JS -->
+    <script src="~/lib/looper/theme.min.js"></script> 
+    <!-- END THEME JS -->
     <!-- BEGIN PAGE LEVEL JS -->
-    <script src="assets/javascript/pages/dashboard-demo.js"></script> <!-- END PAGE LEVEL JS -->
+    @*<script src="assets/javascript/pages/dashboard-demo.js"></script>*@ 
+    <!-- END PAGE LEVEL JS -->
 </body>
 </html>

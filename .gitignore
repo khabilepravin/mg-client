@@ -5,3 +5,6 @@
 /client/bin/Debug/netcoreapp2.1
 /client/obj
 /.vs
+/client/bin/Release/netcoreapp2.1
+/client/client.csproj.user
+/client/Properties/PublishProfiles
