@@ -8,3 +8,6 @@
 /client/bin/Release/netcoreapp2.1
 /client/client.csproj.user
 /client/Properties/PublishProfiles
+/apiProxy/bin/Debug/netstandard2.0
+/apiProxy/obj/Debug/netstandard2.0
+/apiProxy/obj
