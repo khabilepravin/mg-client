@@ -7,13 +7,20 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\css\vendor\tablesaw\dist\dependencies\" />
     <Folder Include="wwwroot\lib\vendor\tablesaw\dist\dependencies\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\apiProxy\apiProxy.csproj" />
   </ItemGroup>
 
 </Project>
