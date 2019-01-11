@@ -15,6 +15,7 @@ using System.Linq;
 using RestSharp;
 using apiProxy.proxyGeneratedCode.Client;
 using apiProxy.proxyGeneratedCode.Model;
+using Microsoft.Extensions.Options;
 
 namespace apiProxy.proxyGeneratedCode.API
 {
@@ -127,14 +128,15 @@ namespace apiProxy.proxyGeneratedCode.API
     public partial class UserFavoriteApi : IUserFavoriteApi
     {
         private apiProxy.proxyGeneratedCode.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
-
+        private ApiProxySetting _apiProxySetting;
         /// <summary>
         /// Initializes a new instance of the <see cref="UserFavoriteApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public UserFavoriteApi(String basePath)
+        public UserFavoriteApi(IOptions<ApiProxySetting> settingOptions)
         {
-            this.Configuration = new apiProxy.proxyGeneratedCode.Client.Configuration { BasePath = basePath };
+            _apiProxySetting = settingOptions.Value;
+            this.Configuration = new apiProxy.proxyGeneratedCode.Client.Configuration { BasePath = _apiProxySetting.BaseUrl };
 
             ExceptionFactory = apiProxy.proxyGeneratedCode.Client.Configuration.DefaultExceptionFactory;
         }

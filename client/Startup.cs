@@ -46,6 +46,8 @@ namespace client
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Populate(services);
 
+            apiProxy.Bootstrapper.Bootstrap(containerBuilder);
+
             this.Container = containerBuilder.Build();
             return new AutofacServiceProvider(this.Container);
         }

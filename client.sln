@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "client", "client\client.csproj", "{DEAA8D25-3553-464E-B1C0-573F42E123BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apiProxy", "apiProxy\apiProxy.csproj", "{8324D59B-F141-4C82-A588-7A554B90FE41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apiProxy", "apiProxy\apiProxy.csproj", "{8324D59B-F141-4C82-A588-7A554B90FE41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

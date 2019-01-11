@@ -14,6 +14,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using apiProxy.proxyGeneratedCode.Client;
+using apiProxy.proxyGeneratedCode.Model;
+using Microsoft.Extensions.Options;
 
 namespace apiProxy.proxyGeneratedCode.API
 {
@@ -80,14 +82,15 @@ namespace apiProxy.proxyGeneratedCode.API
     public partial class TextApi : ITextApi
     {
         private apiProxy.proxyGeneratedCode.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
-
+        private ApiProxySetting _apiProxySetting;
         /// <summary>
         /// Initializes a new instance of the <see cref="TextApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TextApi(String basePath)
+        public TextApi(IOptions<ApiProxySetting> settingOptions)
         {
-            this.Configuration = new apiProxy.proxyGeneratedCode.Client.Configuration { BasePath = basePath };
+            _apiProxySetting = settingOptions.Value;
+            this.Configuration = new apiProxy.proxyGeneratedCode.Client.Configuration { BasePath = _apiProxySetting.BaseUrl };
 
             ExceptionFactory = apiProxy.proxyGeneratedCode.Client.Configuration.DefaultExceptionFactory;
         }

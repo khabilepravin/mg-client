@@ -15,6 +15,7 @@ using System.Linq;
 using RestSharp;
 using apiProxy.proxyGeneratedCode.Client;
 using apiProxy.proxyGeneratedCode.Model;
+using Microsoft.Extensions.Options;
 
 namespace apiProxy.proxyGeneratedCode.API
 {
@@ -81,14 +82,15 @@ namespace apiProxy.proxyGeneratedCode.API
     public partial class ParsedTextArtistApi : IParsedTextArtistApi
     {
         private apiProxy.proxyGeneratedCode.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
-
+        private ApiProxySetting _apiProxySetting;
         /// <summary>
         /// Initializes a new instance of the <see cref="ParsedTextArtistApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ParsedTextArtistApi(String basePath)
+        public ParsedTextArtistApi(IOptions<ApiProxySetting> settingOptions)
         {
-            this.Configuration = new apiProxy.proxyGeneratedCode.Client.Configuration { BasePath = basePath };
+            _apiProxySetting = settingOptions.Value;
+            this.Configuration = new apiProxy.proxyGeneratedCode.Client.Configuration { BasePath = _apiProxySetting.BaseUrl };
 
             ExceptionFactory = apiProxy.proxyGeneratedCode.Client.Configuration.DefaultExceptionFactory;
         }
