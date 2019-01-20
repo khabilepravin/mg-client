@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace apiProxy.impl
 {
-    interface IMediaApi
+    public interface IMediaApi
     {
         Task<string> PostMedia(dynamic mediaObject);
-        Task<IEnumerable<object>> SearchMedia(string searchText);
+        //Task<IEnumerable<object>> SearchMedia(string searchText);
     }
 }

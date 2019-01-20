@@ -1,9 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
-using Flurl.Util;
-using Microsoft.Extensions.Options;
 
 namespace apiProxy.impl
 {
@@ -19,13 +15,6 @@ namespace apiProxy.impl
         {
             await Task.CompletedTask;
             return "";
-        }
-
-        public async Task<IEnumerable<object>> SearchMedia(string searchText)
-        {
-            var result = await _apiProxySetting.BaseUrl.AppendPathSegment($"search/{searchText}").GetJsonAsync();
-            return result;
-            
         }
     }
 }
