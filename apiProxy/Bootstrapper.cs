@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using apiProxy.impl;
+using Autofac;
 
 namespace apiProxy
 {
@@ -6,7 +7,8 @@ namespace apiProxy
     {
         public static void Bootstrap(ContainerBuilder containerBuilder)
         {
-
+            containerBuilder.RegisterType<MediaApi>().As<IMediaApi>();
+            containerBuilder.RegisterType<SearchApi>().As<ISearchApi>();
         }
     }
 }

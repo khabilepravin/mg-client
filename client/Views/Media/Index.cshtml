@@ -4,5 +4,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Media</h2>
-
+<section class="page-section">
+    <div class="d-xl-none">
+        <button class="btn btn-danger btn-floated" type="button" data-toggle="sidebar"><i class="fa fa-th-list"></i></button>
+    </div><!-- .card -->
+    <section id="base-style" class="card">
+        <!-- .card-body -->
+        <div class="card-body">
+            <!-- .form -->
+            <form>
+                <!-- .fieldset -->
+                <fieldset>
+                    <legend>Upload Subtitle File</legend> <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf1">Email address</label> <input type="email" class="form-control" id="tf1" aria-describedby="tf1Help" placeholder="e.g. johndoe@looper.com"> <small id="tf1Help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div><!-- /.form-group -->
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf2">Number input</label> <input type="number" class="form-control" id="tf2" placeholder="Amount (to the nearest dollar)">
+                    </div><!-- /.form-group -->
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf3">File input</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="tf3" multiple> <label class="custom-file-label" for="tf3">Choose file</label>
+                        </div>
+                    </div><!-- /.form-group -->
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf4">Clearable</label>
+                        <div class="has-clearable">
+                            <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button> <input type="text" class="form-control" id="tf4" placeholder="Type something..." value="Moonlight">
+                        </div>
+                    </div><!-- /.form-group -->
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf5">Textarea</label>
+                        <textarea class="form-control" id="tf5" rows="3"></textarea>
+                    </div><!-- /.form-group -->
+                </fieldset><!-- /.fieldset -->
+            </form><!-- /.form -->
+        </div><!-- /.card-body -->
+    </section>
+</section>
