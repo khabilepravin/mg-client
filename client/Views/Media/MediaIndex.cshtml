@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="page-section" id="media">
+    <div class="d-xl-none">
+        <button class="btn btn-danger btn-floated" type="button" data-toggle="sidebar"><i class="fa fa-th-list"></i></button>
+    </div><!-- .card -->
+    <section id="base-style" class="card">
+        <!-- .card-body -->
+        <div class="card-body center-block">
+            <!-- .form -->
+            <form>
+            <span>{{message}}</span>
+                <!-- .fieldset -->
+                <fieldset>
+                    <legend>Upload Subtitle File</legend> <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf1">Name</label> 
+                            <input type="text" class="form-control" id="tf1" v-model="name" aria-describedby="tf1Help" placeholder="Name">
+                    </div><!-- /.form-group -->
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf2">Plot</label> <input type="text" class="form-control" id="tf2" placeholder="Plot">
+                    </div><!-- /.form-group -->
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <label for="tf2">Release Year</label> <input type="number" maxlength="4" class="form-control" id="tf2" placeholder="Release Year">
+                    </div><!-- /.form-group -->
+                    <div class="form-group">
+                        <label for="tf3">Subtitle File</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="tf3" multiple> <label class="custom-file-label" for="tf3">Choose file</label>
+                        </div>
+                    </div><!-- /.form-group -->
+                    <div class="form-group">
+                        <input type="button" class="btn btn-primary" value="Submit" />
+                        <input type="button" class="btn btn-danger" value="Cancel" />
+                    </div>
+                </fieldset><!-- /.fieldset -->
+            </form><!-- /.form -->
+        </div><!-- /.card-body -->
+    </section>
+</section>
+@section Scripts {
+
+    <environment names="Development">
+        <script type="text/javascript" src="@Url.Content("~/js/media.js")" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="text/javascript" src="@Url.Content("~/js/media.js")" asp-append-version="true"></script>
+    </environment>
+}
