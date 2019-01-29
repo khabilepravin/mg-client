@@ -2,8 +2,17 @@
     el: '#media',
     data: {
         name: "Test",
-        plot: "",
-        releaseYear: 1990,
+        description: "desc",
+        season: 1,
+        episode: 1,
+        keywords: "rwsf",
+        externalLink:"fdsf",
+        releaseDate: 1990,
         file:""
+    },
+    methods: {
+        submitMedia: function () {
+            alert('Hello');
+        }
     }
 });
