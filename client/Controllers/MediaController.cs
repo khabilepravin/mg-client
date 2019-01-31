@@ -1,5 +1,6 @@
 ﻿using apiProxy.impl;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace client.Controllers
 {
@@ -14,6 +15,16 @@ namespace client.Controllers
         public IActionResult Index()
         {
             return View("MediaIndex");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostMedia([FromBody]dynamic media)
+        {
+            var m = media;
+
+            await Task.CompletedTask;
+
+            return Ok();
         }
     }
 }

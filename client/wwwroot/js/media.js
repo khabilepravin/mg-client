@@ -6,13 +6,19 @@
         season: 1,
         episode: 1,
         keywords: "rwsf",
-        externalLink:"fdsf",
+        externalLink: "fdsf",
         releaseDate: 1990,
-        filesubtitleFile:''
+        filesubtitleFile: ''
     },
     methods: {
         submitMedia() {
-            console.log('submit media called');
+            axios.post('media/postmedia', { body: this })
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error.response);
+                });
         },
         handleFileUpload(e) {
             console.log('this gets called at least');

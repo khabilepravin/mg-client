@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="~/css/theme/theme-dark.min.css" data-skin="dark">
     <link rel="stylesheet" href="~/css/theme/custom.css"><!-- Disable unused skin immediately -->
     <script>
-    var skin = localStorage.getItem('skin') || 'default';
+        var skin = localStorage.getItem('skin') || 'default';
         var unusedLink = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
 
         unusedLink.setAttribute('rel', '');
@@ -65,7 +65,7 @@
                     <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside" aria-label="toggle menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle menu -->
                     <a href="index.html">
                         MovieGrep
-                    @*<img src="~/images/brand-inverse.png" alt="" style="height: 80px;width: auto;">*@
+                        @*<img src="~/images/brand-inverse.png" alt="" style="height: 80px;width: auto;">*@
                     </a>
                 </div><!-- /.top-bar-brand -->
                 <!-- .top-bar-list -->
@@ -363,14 +363,14 @@
     <script src="~/lib/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="~/lib/vendor/flatpickr/flatpickr.min.js"></script>
     @*<script src="~/lib/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
-    <script src="~/lib/vendor/chart.js/Chart.min.js"></script>*@ 
+        <script src="~/lib/vendor/chart.js/Chart.min.js"></script>*@
     <!-- END PLUGINS JS -->
     <!-- BEGIN THEME JS -->
-    <script src="~/lib/looper/theme.min.js"></script> 
+    <script src="~/lib/looper/theme.min.js"></script>
     <!-- END THEME JS -->
     <!-- BEGIN PAGE LEVEL JS -->
-    @*<script src="assets/javascript/pages/dashboard-demo.js"></script>*@ 
+    @*<script src="assets/javascript/pages/dashboard-demo.js"></script>*@
     <!-- END PAGE LEVEL JS -->
-    @RenderSection("scripts", required:false)
+    @RenderSection("scripts", required: false)
 </body>
 </html>
