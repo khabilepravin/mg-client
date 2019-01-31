@@ -13,8 +13,6 @@
         <div class="card-body center-block">
             <!-- .form -->
             <form>
-                <span>{{message}}</span>
-
                 <fieldset>
                     <legend>Upload Subtitle File</legend>
                     <div class="form-group">
@@ -40,12 +38,12 @@
                     <div class="form-group">
                         <label for="tf3">Subtitle File</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" multiple> 
+                            <input type="file" class="custom-file-input" @@change="handleFileUpload"> 
                             <label class="custom-file-label" for="tf3">Choose file</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="button" class="btn btn-primary" value="Submit" v-on:click="submitMedia" />
+                        <input type="button" class="btn btn-primary" value="Submit" v-on:click="submitMedia()" />
                         <input type="button" class="btn btn-danger" value="Cancel" />
                     </div>
                 </fieldset>

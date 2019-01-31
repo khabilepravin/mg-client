@@ -8,11 +8,21 @@
         keywords: "rwsf",
         externalLink:"fdsf",
         releaseDate: 1990,
-        file:""
+        filesubtitleFile:''
     },
     methods: {
-        submitMedia: function () {
-            alert('Hello');
+        submitMedia() {
+            console.log('submit media called');
+        },
+        handleFileUpload(e) {
+            console.log('this gets called at least');
+            var files = e.target.files || e.dataTransfer.files;
+
+            if (!files.length)
+                return;
+
+            this.filesubtitleFile = files[0];
+            console.log(this.filesubtitleFile);
         }
     }
 });
