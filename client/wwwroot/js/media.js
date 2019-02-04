@@ -12,7 +12,7 @@
     },
     methods: {
         submitMedia() {
-            axios.post('media/postmedia', { body: this })
+            axios.post(`${baseUrl}/media/postmedia`, this.$data)
                 .then(function (response) {
                     console.log(response.data);
                 })
