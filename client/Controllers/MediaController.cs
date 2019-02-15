@@ -20,6 +20,7 @@ namespace client.Controllers
         [HttpPost]
         public async Task<IActionResult> PostMedia([FromBody]dynamic media)
         {
+            
             var m = media;
 
             await Task.CompletedTask;
