@@ -1,4 +1,6 @@
 ﻿using apiProxy.impl;
+using client.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -18,8 +20,9 @@ namespace client.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostMedia([FromBody]dynamic media)
+        public async Task<IActionResult> PostMedia([FromBody]dynamic media, IFormFile file)
         {
+            var f = file;
             
             var m = media;
 
