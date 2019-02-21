@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 
-namespace client.Models
+namespace apiProxy.Models
 {
     public class Media
     {
