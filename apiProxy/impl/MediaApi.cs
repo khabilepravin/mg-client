@@ -19,7 +19,8 @@ namespace apiProxy.impl
             var endpointUrl = _apiProxySetting.BaseUrl.AppendPathSegment("media");
 
             var response = await endpointUrl.PostMultipartAsync(mp => mp
-            .AddFile(mediaObject.Name, mediaObject.FilesubtitleFile.OpenReadStream(), mediaObject.FilesubtitleFile.FileName));
+            .AddFile(mediaObject.Name, mediaObject.FilesubtitleFile.OpenReadStream(), mediaObject.FilesubtitleFile.FileName)
+            .AddJson("media", mediaObject));
                 
             return "";
         }
