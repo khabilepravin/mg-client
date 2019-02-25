@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Search\" />
     <Folder Include="wwwroot\css\vendor\tablesaw\dist\dependencies\" />
     <Folder Include="wwwroot\lib\vendor\tablesaw\dist\dependencies\" />
   </ItemGroup>
