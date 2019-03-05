@@ -10,12 +10,16 @@ namespace apiProxy.impl
     {
         public SearchApi(IOptions<ApiProxySetting> options) : base(options) { }
 
-        public Task<IEnumerable<object>> Search(string searchText)
+        public async Task<IList<dynamic>> SearchText(string searchText)
         {
-            var response = _baseUrl.AppendPathSegment("search").AppendPathSegment(searchText)
-                .GetAsync();
+            return await _baseUrl.AppendPathSegment("search").AppendPathSegment(searchText)
+                .GetJsonListAsync();
+        }
 
-            return null;
+        public async Task<IList<dynamic>> SearchMedia(string mediaText)
+        {
+            return await _baseUrl.AppendPathSegments("media").AppendPathSegment(mediaText)
+                .GetJsonListAsync();
         }
     }
 }

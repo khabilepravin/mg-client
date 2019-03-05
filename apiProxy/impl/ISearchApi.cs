@@ -5,6 +5,7 @@ namespace apiProxy.impl
 {
     public interface ISearchApi
     {
-        Task<IEnumerable<object>> Search(string searchText);
+        Task<IList<dynamic>> SearchText(string searchText);
+        Task<IList<dynamic>> SearchMedia(string mediaText);
     }
 }

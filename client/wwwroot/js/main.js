@@ -5,9 +5,9 @@
     },
     methods: {
         search(event) {            
-            if (event.code == 'Enter' || event.code == 'NumpadEnter') {
+            if (event.code === 'Enter' || event.code === 'NumpadEnter') {
                 console.log(this.$data.searchText);
-                axios.get(`${baseUrl}/search/searchquotes?quotePartial=${this.$data.searchText}`)
+                axios.get(`${baseUrl}/search/searchmedia?mediaText=${this.$data.searchText}`)
                     .then(function (response) {
                         console.log(response.data);
                     })

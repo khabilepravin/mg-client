@@ -3,6 +3,7 @@ using Flurl;
 using Flurl.Http;
 using Microsoft.Extensions.Options;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace apiProxy.impl
@@ -18,6 +19,12 @@ namespace apiProxy.impl
                                 .AddJson("media", mediaObject));
 
             return Convert.ToString(response.Content);
+        }
+
+        public async Task<IEnumerable<dynamic>> GetMediaText(string id)
+        {
+            return await _baseUrl.AppendPathSegment("media").AppendPathSegment(id)
+                            .GetJsonAsync<IEnumerable<dynamic>>();
         }
     }
 }

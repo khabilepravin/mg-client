@@ -21,9 +21,17 @@ namespace client.Controllers
         [HttpGet]
         public async Task<IActionResult> SearchQuotes(string quotePartial)
         {
-            var response = await _searchApi.Search(quotePartial);
+            var response = await _searchApi.SearchText(quotePartial);
 
             return View("results", response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SearchMedia(string mediaText)
+        {
+            var response = await _searchApi.SearchMedia(mediaText);
+
+            return Json(response);
         }
     }
 }

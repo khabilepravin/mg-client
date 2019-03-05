@@ -32,5 +32,13 @@ namespace client.Controllers
 
             return Ok(mediaId);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetMediaText([FromRoute]string mediaId)
+        {
+            var mediaText = await _mediaApi.GetMediaText(mediaId);
+
+            return Ok(mediaText);
+        }
     }
 }
