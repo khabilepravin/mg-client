@@ -18,8 +18,8 @@ namespace client.Controllers
             return View();
         }
 
-        [HttpGet("{quotePartial}")]
-        public async Task<IActionResult> SearchQuotes([FromRoute]string quotePartial)
+        [HttpGet]
+        public async Task<IActionResult> SearchQuotes(string quotePartial)
         {
             var response = await _searchApi.Search(quotePartial);
 
