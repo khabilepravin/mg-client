@@ -54,7 +54,7 @@
     </script><!-- END THEME STYLES -->
 </head>
 <body>
-    <div class="app has-fullwidth">
+    <div class="app has-fullwidth" id="mainApp">
         <!--[if lt IE 10]>
         <div class="page-message" role="alert">You are using an <strong>outdated</strong> browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
         <![endif]-->
@@ -85,7 +85,7 @@
                             <div class="input-group input-group-search">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
-                                </div><input type="text" class="form-control" aria-label="Search" placeholder="Search">
+                                </div><input type="text" class="form-control" aria-label="Search" placeholder="Search" v-model="searchText" v-on:keyDown="search">
                             </div>
                         </div><!-- /.top-bar-search -->
                     </div><!-- /.top-bar-item -->
@@ -374,9 +374,10 @@
     <!-- BEGIN THEME JS -->
     <script src="~/lib/looper/theme.min.js"></script>
     <!-- END THEME JS -->
-    <!-- BEGIN PAGE LEVEL JS -->
-    @*<script src="assets/javascript/pages/dashboard-demo.js"></script>*@
+    <!-- BEGIN PAGE LEVEL JS -->    
+    <script src="~/js/main.js"></script>
     <!-- END PAGE LEVEL JS -->
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
