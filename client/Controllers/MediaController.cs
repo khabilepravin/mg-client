@@ -10,9 +10,11 @@ namespace client.Controllers
     public class MediaController : Controller
     {
         private readonly IMediaApi _mediaApi;
-        public MediaController(IMediaApi mediaApi)
+        private readonly ISearchApi _searchApi;
+        public MediaController(IMediaApi mediaApi, ISearchApi searchApi)
         {
             _mediaApi = mediaApi;
+            _searchApi = searchApi;
         }
 
         public IActionResult Index()
@@ -22,7 +24,7 @@ namespace client.Controllers
 
         [HttpPost]
         public async Task<IActionResult> PostMedia([FromForm]Media media)
-        {           
+        {
             //using (var reader = new StreamReader(media.FilesubtitleFile.OpenReadStream()))
             //{
             //    media.MediaText = await reader.ReadToEndAsync();
@@ -39,6 +41,15 @@ namespace client.Controllers
             var mediaText = await _mediaApi.GetMediaText(mediaId);
 
             return Ok(mediaText);
+        }
+
+        [Route("/movies/search/{name}")]
+        [HttpGet]
+        public async Task<IActionResult> SearchMedia(string name)
+        {
+            var response = await _searchApi.SearchMedia(name);
+
+            return View(response);
         }
     }
 }
