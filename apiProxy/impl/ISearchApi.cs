@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace apiProxy.impl
@@ -6,6 +7,6 @@ namespace apiProxy.impl
     public interface ISearchApi
     {
         Task<IList<dynamic>> SearchText(string searchText);
-        Task<IList<dynamic>> SearchMedia(string mediaText);
+        Task<IList<JObject>> SearchMedia(string mediaText);
     }
 }

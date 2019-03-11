@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
+using Newtonsoft.Json.Linq;
 
 namespace apiProxy.impl
 {
@@ -16,10 +17,10 @@ namespace apiProxy.impl
                 .GetJsonListAsync();
         }
 
-        public async Task<IList<dynamic>> SearchMedia(string mediaText)
+        public async Task<IList<JObject>> SearchMedia(string mediaText)
         {
             return await _baseUrl.AppendPathSegments("media").AppendPathSegment(mediaText)
-                .GetJsonListAsync();
+                .GetJsonAsync<IList<JObject>>();
         }
     }
 }

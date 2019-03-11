@@ -49,7 +49,7 @@ namespace client.Controllers
         {
             var response = await _searchApi.SearchMedia(name);
 
-            return View(response);
+            return View("SearchResults", response);
         }
     }
 }

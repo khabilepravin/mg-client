@@ -1,8 +1,21 @@
-﻿
+﻿@model List<Newtonsoft.Json.Linq.JObject>
 @{
     ViewData["Title"] = "SearchResults";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Search Results</h2>
+<h5>Search Results</h5>
 
+<div class="list-group list-group-bordered mb-3">
+    @foreach (var result in Model)
+    {
+        <a href="#!" class="list-group-item list-group-item-action">
+            <div class="list-group-item-figure">
+                <div class="tile bg-success">
+                    <span class="fas fa-film"></span>
+                </div>
+            </div>
+            <div class="list-group-item-body">@result["name"]</div>
+        </a>
+    }
+</div>
