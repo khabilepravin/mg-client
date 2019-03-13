@@ -11,10 +11,12 @@ namespace client.Controllers
     {
         private readonly IMediaApi _mediaApi;
         private readonly ISearchApi _searchApi;
-        public MediaController(IMediaApi mediaApi, ISearchApi searchApi)
+        private readonly ITextApi _textApi;
+        public MediaController(IMediaApi mediaApi, ISearchApi searchApi, ITextApi textApi)
         {
             _mediaApi = mediaApi;
             _searchApi = searchApi;
+            _textApi = textApi;
         }
 
         [Route("/media/index")]
@@ -43,6 +45,17 @@ namespace client.Controllers
             var mediaText = await _mediaApi.GetMediaText(mediaId);
 
             return Ok(mediaText);
+        }
+
+
+        [Route("/movies/popularquotes/{mediaId}/{name}")]
+        [HttpGet]
+        public async Task<IActionResult> GetPopularTextFromMediaId([FromRoute]string mediaId, [FromRoute]string name)
+        {
+            var result = await _textApi.GetMediaPopularTextById(mediaId);
+
+            return View("PopularText", result);
+
         }
 
         [Route("/movies/search/{name}")]

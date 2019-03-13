@@ -9,6 +9,7 @@ namespace apiProxy
         {
             containerBuilder.RegisterType<MediaApi>().As<IMediaApi>();
             containerBuilder.RegisterType<SearchApi>().As<ISearchApi>();
+            containerBuilder.RegisterType<TextApi>().As<ITextApi>();
         }
     }
 }
