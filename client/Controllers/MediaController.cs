@@ -17,11 +17,13 @@ namespace client.Controllers
             _searchApi = searchApi;
         }
 
+        [Route("/media/index")]
         public IActionResult Index()
         {
             return View("MediaIndex", new Media());
         }
 
+        [Route("/media/postmedia")]
         [HttpPost]
         public async Task<IActionResult> PostMedia([FromForm]Media media)
         {

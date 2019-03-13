@@ -12,7 +12,7 @@
         <!-- .card-body -->
         <div class="card-body center-block">
             <!-- .form -->
-            <form method="post" enctype="multipart/form-data" asp-controller="Media" asp-action="PostMedia">
+            <form method="post" enctype="multipart/form-data" asp-controller="media" asp-action="postmedia">
                 <fieldset>
                     <legend>Upload Subtitle File</legend>
                     <div class="form-group">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="tf2">Release Year</label> 
-                        <input type="number" maxlength="4" asp-for="ReleaseDate" class="form-control" placeholder="Release Year">
+                        <input type="date" maxlength="4" asp-for="ReleaseDate" class="form-control" placeholder="Release Year">
                     </div>
                     <div class="form-group">
                         <label for="tf3">Subtitle File</label>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Submit" v-on:click="submitMedia()" />
+                        <input type="submit" class="btn btn-primary" value="Submit" />
                         <input type="button" class="btn btn-danger" value="Cancel" />
                     </div>
                 </fieldset>
