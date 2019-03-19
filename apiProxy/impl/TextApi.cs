@@ -1,4 +1,5 @@
-﻿using Flurl;
+﻿using apiProxy.Models;
+using Flurl;
 using Flurl.Http;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace apiProxy.impl
     {
         public TextApi(IOptions<ApiProxySetting> options) : base(options) { }
 
-        public async Task<IEnumerable<dynamic>> GetMediaPopularTextById(string mediaId)
+        public async Task<IEnumerable<MediaText>> GetMediaPopularTextById(string mediaId)
         {
             return await _baseUrl.AppendPathSegment("text/mediatext").AppendPathSegment(mediaId)
-                            .GetJsonAsync<IEnumerable<dynamic>>();
+                            .GetJsonAsync<IEnumerable<MediaText>>();
         }
     }
 }

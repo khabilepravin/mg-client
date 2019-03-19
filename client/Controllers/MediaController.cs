@@ -1,8 +1,6 @@
 ﻿using apiProxy.impl;
 using apiProxy.Models;
-using client.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace client.Controllers
@@ -55,7 +53,6 @@ namespace client.Controllers
             var result = await _textApi.GetMediaPopularTextById(mediaId);
 
             return View("PopularText", result);
-
         }
 
         [Route("/movies/search/{name}")]
