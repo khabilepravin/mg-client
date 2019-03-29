@@ -22,5 +22,11 @@ namespace apiProxy.impl
             return await _baseUrl.AppendPathSegments("media").AppendPathSegment(mediaText)
                 .GetJsonAsync<IList<JObject>>();
         }
+
+        public async Task<IList<JObject>> SearchTextInMedia(string id, string searchText)
+        {
+            return await _baseUrl.AppendPathSegment("search").AppendPathSegment(id).AppendPathSegment(searchText)
+                .GetJsonAsync<IList<JObject>>();
+        }
     }
 }

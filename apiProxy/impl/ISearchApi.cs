@@ -8,5 +8,6 @@ namespace apiProxy.impl
     {
         Task<IList<dynamic>> SearchText(string searchText);
         Task<IList<JObject>> SearchMedia(string mediaText);
+        Task<IList<JObject>> SearchTextInMedia(string id, string searchText);
     }
 }
