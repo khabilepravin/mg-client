@@ -1,6 +1,7 @@
 ﻿var dataObject =  {
     searchText: "",
-    searchTextWithinTitle:"",
+    searchTextWithinTitle: "",
+    searchWithinTitleResult:[],
     items: [] = []
 };
 
@@ -17,7 +18,8 @@ var app = new Vue({
             if (event.code === 'Enter' || event.code === 'NumpadEnter') {
                 var id = this.getMediaId();
                 axios.get(`${baseUrl}/movies/search/${id}/${this.$data.searchTextWithinTitle}`).then(({ data }) => {
-                    console.log('called');                    
+                    this.$data.searchWithinTitleResult = data;
+                    console.log(this.$data.searchWithinTitleResult);
                 });
             }
         },
