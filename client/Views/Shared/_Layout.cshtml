@@ -277,7 +277,16 @@
                             </div>
                         </div>*@
                         <div>
-                            <a asp-controller="Auth" asp-action="SignIn">Sign in</a>
+                            <ul class="nav navbar-nav navbar-right">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><a id="qsLogoutBtn" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                                }
+                                else
+                                {
+                                    <li><a id="qsLoginBtn" asp-controller="Account" asp-action="Login">Login</a></li>
+                                }
+                            </ul>
                         </div>
                     </div><!-- /.top-bar-item -->
                 </div><!-- /.top-bar-list -->
