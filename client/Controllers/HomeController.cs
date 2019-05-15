@@ -36,9 +36,15 @@ namespace client.Controllers
         }
 
         [Route("callback")]
-        public IActionResult Callback()
+        public IActionResult Callback(string token)
         {
-            return View("Callback");
+            //var c = User.Identity;
+
+            var s = new { Token = token };
+            //if (User.Identity.IsAuthenticated)
+                //string idToken = await HttpContext.GetTokenAsync("id_token");
+
+            return View("Callback", s);
         }
 
         public IActionResult About()

@@ -1,4 +1,4 @@
-﻿
+﻿@model System.Security.Claims.ClaimsIdentity
 @{
     ViewData["Title"] = "Callback";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +6,4 @@
 
 <h2>Callback</h2>
 
+@Model.Name
