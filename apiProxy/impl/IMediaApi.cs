@@ -9,5 +9,6 @@ namespace apiProxy.impl
         Task<string> PostMedia(Media mediaObject);
         Task<IEnumerable<dynamic>> GetMediaText(string id);
         //Task<IEnumerable<object>> SearchMedia(string searchText);
+        Task<IEnumerable<dynamic>> GetAllMedia();
     }
 }

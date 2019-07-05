@@ -1,13 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using apiProxy.impl;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace client.Controllers
 {
     public class ExploreController : Controller
     {
-        [Route("/explore/categories")]
-        public IActionResult Categories()
+        private readonly IMediaApi _mediaApi;
+        public ExploreController(IMediaApi mediaApi)
         {
-            return View();
+            _mediaApi = mediaApi;
+        }
+
+        [Route("/explore/categories")]
+        public async Task<IActionResult> Categories()
+        {
+            var allMedia = await _mediaApi.GetAllMedia();
+
+            return View(allMedia);
         }
     }
 }

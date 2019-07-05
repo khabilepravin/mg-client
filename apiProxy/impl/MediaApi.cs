@@ -26,5 +26,11 @@ namespace apiProxy.impl
             return await _baseUrl.AppendPathSegment("media").AppendPathSegment(id)
                             .GetJsonAsync<IEnumerable<dynamic>>();
         }
+
+        public async Task<IEnumerable<dynamic>> GetAllMedia()
+        {
+            return await _baseUrl.AppendPathSegment("media")
+                            .GetJsonAsync<IEnumerable<dynamic>>();
+        }
     }
 }
