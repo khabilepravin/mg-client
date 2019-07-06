@@ -41,9 +41,9 @@ namespace client.Controllers
         }
 
 
-        [Route("/movies/popularquotes/{mediaId}/{name}")]
+        [Route("/{mediaType}/{mediaId}/{name}/popularquotes")]
         [HttpGet]
-        public async Task<IActionResult> GetPopularTextFromMediaId([FromRoute]string mediaId, [FromRoute]string name)
+        public async Task<IActionResult> GetPopularTextFromMediaId([FromRoute]string mediaType, [FromRoute]string mediaId, [FromRoute]string name)
         {
             var result = await _textApi.GetMediaPopularTextById(mediaId);
 
