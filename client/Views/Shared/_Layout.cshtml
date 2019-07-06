@@ -66,7 +66,7 @@
                 <div class="top-bar-brand bg-transparent">
                     <!-- toggle menu -->
                     <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside" aria-label="toggle menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle menu -->
-                    <a href="index.html">
+                    <a href="/">
                         MovieGrep
                         <img src="~/images/logo-nobackground.png" alt="" style="height: 50px;width: auto;">
                     </a>
@@ -85,7 +85,7 @@
                             <div class="input-group input-group-search">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
-                                </div><input type="text" class="form-control" aria-label="Search" placeholder="Search" v-model="searchText" v-on:keyDown="search">
+                                </div><input type="text" class="form-control" aria-label="Search" placeholder="Search Title" v-model="searchText" v-on:keyDown="search">
                             </div>
                         </div><!-- /.top-bar-search -->
                     </div><!-- /.top-bar-item -->
@@ -328,11 +328,11 @@
                             <li class="menu-item">
                                 <a asp-controller="media" asp-action="index" class="menu-link"><span class="menu-icon fas fa-file-upload"></span> <span class="menu-text">Upload</span></a>
                             </li>
+                            @*<li class="menu-item">
+            <a asp-controller="favorites" asp-action="top" class="menu-link"><span class="menu-icon fas fa-star"></span> <span class="menu-text">Top</span></a>
+        </li>*@
                             <li class="menu-item">
-                                <a asp-controller="favorites" asp-action="top" class="menu-link"><span class="menu-icon fas fa-star"></span> <span class="menu-text">Top</span></a>
-                            </li>
-                            <li class="menu-item">
-                                <a asp-controller="explore" asp-action="categories" class="menu-link"><span class="menu-icon fas fa-book-reader"></span> <span class="menu-text">Explore</span></a>
+                                <a asp-controller="explore" asp-action="all" class="menu-link"><span class="menu-icon fas fa-book-reader"></span> <span class="menu-text">Explore</span></a>
                             </li>
                         </ul><!-- /.menu -->
                     </nav><!-- /.stacked-menu -->
@@ -350,7 +350,7 @@
                 @RenderBody()
             </div><!-- /.wrapper -->
             <!-- .app-footer -->
-            <footer class="app-footer">
+            @*<footer class="app-footer">
                 <ul class="list-inline">
                     <li class="list-inline-item">
                         <a class="text-muted" href="#!">Support</a>
@@ -366,7 +366,7 @@
                     </li>
                 </ul>
                 <div class="copyright"> Moviegrep - Copyright © 2019. All right reserved. </div>
-            </footer><!-- /.app-footer -->
+            </footer>*@<!-- /.app-footer -->
         </main><!-- /.app-main -->
     </div><!-- /.app -->
     <!-- BEGIN BASE JS -->

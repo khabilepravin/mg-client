@@ -12,12 +12,12 @@ namespace client.Controllers
             _mediaApi = mediaApi;
         }
 
-        [Route("/explore/categories")]
-        public async Task<IActionResult> Categories()
+        [Route("/explore/all")]
+        public async Task<IActionResult> All()
         {
             var allMedia = await _mediaApi.GetAllMedia();
 
-            return View(allMedia);
+            return View("AllMedia", allMedia);
         }
     }
 }
