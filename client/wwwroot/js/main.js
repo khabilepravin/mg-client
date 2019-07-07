@@ -2,7 +2,8 @@
     searchText: "",
     searchTextWithinTitle: "",
     searchWithinTitleResult:[],
-    items: [] = []
+    items: [] = [],
+    selectedMediaId: ""
 };
 
 var app = new Vue({
@@ -25,8 +26,8 @@ var app = new Vue({
         },
         getMediaId() {
             let urlParts = window.location.href.split('/');
-            return urlParts[5];
-        }   
-
+            console.log(JSON.stringify(urlParts));
+            return urlParts[4];
+        }
     }
 });

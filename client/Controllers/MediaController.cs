@@ -1,5 +1,6 @@
 ﻿using apiProxy.impl;
 using apiProxy.Models;
+using client.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -47,7 +48,9 @@ namespace client.Controllers
         {
             var result = await _textApi.GetMediaPopularTextById(mediaId);
 
-            return View("PopularText", result);
+            var vm = new MediaResultViewModel { MediaId = mediaId, MediaTextResult = result, MediaName = name };
+
+            return View("PopularText", vm);
         }
 
         [Route("/movies/search/{name}")]

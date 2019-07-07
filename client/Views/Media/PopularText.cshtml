@@ -1,20 +1,19 @@
-﻿@model IEnumerable<apiProxy.Models.MediaText>
+﻿@model client.ViewModel.MediaResultViewModel
 @{
     ViewData["Title"] = "PopularText";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="page-inner" id="popularSearch">
     <h5>Popular Text</h5>
     <div class="input-group input-group-search">
         <div class="input-group-prepend">
             <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
         </div><input type="text" class="form-control" aria-label="Search"
-                     placeholder="Search more" v-model="searchTextWithinTitle" v-on:keyDown="searchWithinTitle">
-    </div>
+                     placeholder="Search more in @Model.MediaName" v-model="searchTextWithinTitle" v-on:keyDown="searchWithinTitle($event, selectedMediaId)">
 
+    </div>
     <div class="list-group list-group-bordered mb-3">
-        @foreach (var result in Model)
+        @foreach (var result in Model.MediaTextResult)
         {
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="list-group-item-figure">
