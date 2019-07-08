@@ -12,8 +12,21 @@ namespace client.Extensions
 
         public static string ToOriginalText(string input)
         {
-            input = input.Replace("-", " ");
-            return input.First().ToString().ToUpper() + input.Substring(1);
+            var stringParts = input.Split("-");
+            if(stringParts.Length > 0)
+            {
+                string modifiedString = "";
+                foreach(var str in stringParts)
+                {
+                    modifiedString += $"{str.First().ToString().ToUpper()}{str.Substring(1)} ";
+                }
+
+                return modifiedString;
+            }
+            else
+            {
+                return input;
+            }
         }
     }
 }

@@ -1,15 +1,18 @@
-﻿@model client.ViewModel.MediaResultViewModel
+﻿@using client.Extensions
+@model client.ViewModel.MediaResultViewModel
 @{
-    ViewData["Title"] = "PopularText";
+    var mediaDisplayName = StringExtensions.ToOriginalText(Model.MediaName);
+    ViewData["Title"] = $"{mediaDisplayName} Popular Quotes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="page-inner" id="popularSearch">
-    <h5>Popular Text</h5>
+    <h5>@mediaDisplayName Popular Quotes</h5>
     <div class="input-group input-group-search">
         <div class="input-group-prepend">
             <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
         </div><input type="text" class="form-control" aria-label="Search"
-                     placeholder="Search more in @Model.MediaName" v-model="searchTextWithinTitle" v-on:keyDown="searchWithinTitle($event, selectedMediaId)">
+                     placeholder="Search more in @mediaDisplayName" v-model="searchTextWithinTitle" v-on:keyDown="searchWithinTitle($event, selectedMediaId)">
 
     </div>
     <div class="list-group list-group-bordered mb-3">
