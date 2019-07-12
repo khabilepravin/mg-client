@@ -13,7 +13,7 @@
             {
                 <a href="~/@UrlExtensions.GetPopularQuotesUrl(result)" class="list-group-item list-group-item-action">
                     <div class="list-group-item-figure">
-                        <div class="tile bg-success">
+                        <div class="tile bg-@(Convert.ToBoolean(result["isPartofFavorite"]) == true ? "success" : "danger")">
                             <span class="fas fa-@(Convert.ToInt32(result["season"]) > 0 ? "tv" : "film")"></span>
                         </div>
                     </div>
