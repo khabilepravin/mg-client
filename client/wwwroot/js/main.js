@@ -26,8 +26,17 @@ var app = new Vue({
         },
         getMediaId() {
             let urlParts = window.location.href.split('/');
-            console.log(JSON.stringify(urlParts));
             return urlParts[4];
+        },
+        addToFavorites(title) {
+            var userId = localStorage.getItem('mgUserId');
+            if (userId !== null && userId !== undefined) {
+                if (title.isPartofFavorite === false)
+                {
+                    axios.post(`${baseUrl}/favorites/add`, { userId: userId, parsedTextId: title.id });
+                    title.isPartofFavorite = true;
+                }
+            }
         }
     }
 });
