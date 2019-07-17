@@ -18,8 +18,8 @@ namespace client.Controllers
             _textApi = textApi;
         }
 
-        [Route("/media/index")]
-        public IActionResult Index()
+        [Route("/media/upload")]
+        public IActionResult Upload()
         {
             return View("MediaIndex", new Media());
         }
