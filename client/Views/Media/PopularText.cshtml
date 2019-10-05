@@ -13,8 +13,9 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
             </div><input type="text" class="form-control" aria-label="Search"
-                         placeholder="Search more in @mediaDisplayName" v-model="searchTextWithinTitle" v-on:keyDown="searchWithinTitle($event, selectedMediaId)">
-
+                         placeholder="Search more in @mediaDisplayName" 
+                         v-model="searchTextWithinTitle" 
+                         v-on:keyDown="searchWithinTitle($event, selectedMediaId)">
         </div>
         <div class="list-group list-group-bordered mb-3">
             @foreach (var result in Model.MediaTextResult)
@@ -22,7 +23,7 @@
                 <a href="#" class="list-group-item list-group-item-action">
                     <div class="list-group-item-figure">
                         <div class="tile bg-success">
-                            <span class="fas fa-quote-right"></span>
+                            <span class="fas fa-star"></span>
                         </div>
                     </div>
                     <div class="list-group-item-body">@result.text</div>
@@ -33,8 +34,9 @@
             <h6>Search results for "{{searchTextWithinTitle}}" </h6>
             <a href="#" class="list-group-item list-group-item-action" v-for="item in searchWithinTitleResult">
                 <div class="list-group-item-figure">
-                    <div class="tile" v-bind:class="{ 'bg-success':item.isPartofFavorite }" v-on:click="addToFavorites(item)">
-                        <span class="fas fa-quote-right"></span>
+                    <div class="tile" v-bind:class="{ 'bg-success':item.isPartofFavorite }"
+                         v-on:click="addToFavorites(item)">
+                        <span class="fas fa-star"></span>
                     </div>
                 </div>
                 <div class="list-group-item-body">{{item.text}}</div>
