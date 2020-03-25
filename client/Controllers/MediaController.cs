@@ -66,7 +66,8 @@ namespace client.Controllers
         [HttpGet]
         public async Task<IActionResult> SearchTextInMovies([FromRoute]string id, [FromRoute]string searchText)
         {
-            var response = await  _searchApi.SearchTextInMedia(id, searchText);
+            var response = await _searchApi.SearchTextInMedia(id, searchText);
+
             return Ok(response);
         }
     }

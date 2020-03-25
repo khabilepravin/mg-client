@@ -48,7 +48,7 @@
         unusedLink.setAttribute('disabled', true);
 
         var baseUrl = 'https://localhost:44378';
-    
+
     </script><!-- END THEME STYLES -->
 </head>
 <body>
@@ -92,59 +92,59 @@
                         <!-- .nav -->
                         <ul class="header-nav nav">
                             <!-- .nav-item -->
-
                             <!-- .nav-item -->
-                            
                             <!-- .nav-item -->
                             <li class="nav-item dropdown header-nav-dropdown">
                                 <a class="nav-link" href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="oi oi-grid-three-up"></span></a>
                                 <div class="dropdown-arrow"></div><!-- .dropdown-menu -->
                                 <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right">
                                     <!-- .dropdown-sheets -->
-                                    <div class="dropdown-sheets">                                        <!-- .dropdown-sheet-item -->
+                                    <div class="dropdown-sheets">
+                                        <!-- .dropdown-sheet-item -->
                                         <div class="dropdown-sheet-item">
                                             <a asp-controller="explore" asp-action="all" class="tile-wrapper"><span class="tile tile-lg bg-indigo"><i class="oi oi-dashboard"></i></span> <span class="tile-peek">Explore</span></a>
                                         </div><!-- /.dropdown-sheet-item -->
-                                        
+
                                         <div class="dropdown-sheet-item">
                                             <a asp-controller="media" asp-action="upload" class="tile-wrapper"><span class="tile tile-lg bg-teal"><i class="oi oi-file"></i></span> <span class="tile-peek">Upload</span></a>
                                         </div>
-                                        
+
                                         @*<div class="dropdown-sheet-item">
-                                            <a href="#!" class="tile-wrapper"><span class="tile tile-lg bg-pink"><i class="fa fa-tasks"></i></span> <span class="tile-peek">Tasks</span></a>
-                                        </div>
-                                        
-                                        <div class="dropdown-sheet-item">
-                                            <a href="#!" class="tile-wrapper"><span class="tile tile-lg bg-yellow"><i class="oi oi-fire"></i></span> <span class="tile-peek">Feeds</span></a>
-                                        </div>
-                                        <div class="dropdown-sheet-item">
-                                            <a href="#!" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="oi oi-document"></i></span> <span class="tile-peek">Files</span></a>
-                                        </div>*@
+                                                <a href="#!" class="tile-wrapper"><span class="tile tile-lg bg-pink"><i class="fa fa-tasks"></i></span> <span class="tile-peek">Tasks</span></a>
+                                            </div>
+
+                                            <div class="dropdown-sheet-item">
+                                                <a href="#!" class="tile-wrapper"><span class="tile tile-lg bg-yellow"><i class="oi oi-fire"></i></span> <span class="tile-peek">Feeds</span></a>
+                                            </div>
+                                            <div class="dropdown-sheet-item">
+                                                <a href="#!" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="oi oi-document"></i></span> <span class="tile-peek">Files</span></a>
+                                            </div>*@
                                     </div>
                                 </div>
                             </li><!-- /.nav-item -->
                         </ul><!-- /.nav -->
                         <!-- .btn-account -->
                         @*<div class="dropdown">
-                            <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-avatar user-avatar-md"><img src="~/images/avatars/profile.jpg" alt=""></span> <span class="account-summary pr-lg-4 d-none d-lg-block"><span class="account-name">Beni Arisandi</span> <span class="account-description">Marketing Manager</span></span></button>
-                            <div class="dropdown-arrow dropdown-arrow-left"></div>
-                            <div class="dropdown-menu">
-                                <h6 class="dropdown-header d-none d-md-block d-lg-none"> Beni Arisandi </h6><a class="dropdown-item" href="user-profile.html"><span class="dropdown-icon oi oi-person"></span> Profile</a> <a class="dropdown-item" href="auth-signin-v1.html"><span class="dropdown-icon oi oi-account-logout"></span> Logout</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Help Center</a> <a class="dropdown-item" href="#!">Ask Forum</a> <a class="dropdown-item" href="#!">Keyboard Shortcuts</a>
-                            </div>
-                        </div>*@
+                                <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-avatar user-avatar-md"><img src="~/images/avatars/profile.jpg" alt=""></span> <span class="account-summary pr-lg-4 d-none d-lg-block"><span class="account-name">Beni Arisandi</span> <span class="account-description">Marketing Manager</span></span></button>
+                                <div class="dropdown-arrow dropdown-arrow-left"></div>
+                                <div class="dropdown-menu">
+                                    <h6 class="dropdown-header d-none d-md-block d-lg-none"> Beni Arisandi </h6><a class="dropdown-item" href="user-profile.html"><span class="dropdown-icon oi oi-person"></span> Profile</a> <a class="dropdown-item" href="auth-signin-v1.html"><span class="dropdown-icon oi oi-account-logout"></span> Logout</a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#!">Help Center</a> <a class="dropdown-item" href="#!">Ask Forum</a> <a class="dropdown-item" href="#!">Keyboard Shortcuts</a>
+                                </div>
+                            </div>*@
                         <div>
-                            @*<ul class="nav navbar-nav navbar-right">
+                            <a asp-controller="media" asp-action="upload" class="tile-wrapper"><span class="tile tile-lg bg-teal"><i class="oi oi-file"></i></span> <span class="tile-peek">Upload</span></a>
+                            <ul class="nav navbar-nav navbar-right">
                                 @if (User.Identity.IsAuthenticated)
                                 {
                                     <li><a asp-controller="Account" asp-action="Profile">Hello @User.Identity.Name!</a></li>
-                                    <li><a id="qsLogoutBtn" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                                    <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
                                 }
                                 else
                                 {
-                                    <li><a id="qsLoginBtn" asp-controller="Account" asp-action="Login">Login</a></li>
+                                    <li><a asp-controller="account" asp-action="login">Login</a></li>
                                 }
-                            </ul>*@
+                            </ul>
                         </div>
                     </div><!-- /.top-bar-item -->
                 </div><!-- /.top-bar-list -->
@@ -186,8 +186,8 @@
                                 <a asp-controller="media" asp-action="upload" class="menu-link"><span class="menu-icon fas fa-file-upload"></span> <span class="menu-text">Upload</span></a>
                             </li>
                             @*<li class="menu-item">
-            <a asp-controller="favorites" asp-action="top" class="menu-link"><span class="menu-icon fas fa-star"></span> <span class="menu-text">Top</span></a>
-        </li>*@
+                                    <a asp-controller="favorites" asp-action="top" class="menu-link"><span class="menu-icon fas fa-star"></span> <span class="menu-text">Top</span></a>
+                                </li>*@
                             <li class="menu-item">
                                 <a asp-controller="explore" asp-action="all" class="menu-link"><span class="menu-icon fas fa-door-open"></span> <span class="menu-text">Explore</span></a>
                             </li>
@@ -208,22 +208,22 @@
             </div><!-- /.wrapper -->
             <!-- .app-footer -->
             @*<footer class="app-footer">
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="#!">Support</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="#!">Help Center</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="#!">Privacy</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="#!">Terms of Service</a>
-                    </li>
-                </ul>
-                <div class="copyright"> Moviegrep - Copyright © 2019. All right reserved. </div>
-            </footer>*@<!-- /.app-footer -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a class="text-muted" href="#!">Support</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="text-muted" href="#!">Help Center</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="text-muted" href="#!">Privacy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="text-muted" href="#!">Terms of Service</a>
+                        </li>
+                    </ul>
+                    <div class="copyright"> Moviegrep - Copyright © 2019. All right reserved. </div>
+                </footer>*@<!-- /.app-footer -->
         </main><!-- /.app-main -->
     </div><!-- /.app -->
     <!-- BEGIN BASE JS -->
@@ -244,7 +244,7 @@
     <!-- BEGIN THEME JS -->
     <script src="~/lib/looper/theme.min.js"></script>
     <!-- END THEME JS -->
-    <!-- BEGIN PAGE LEVEL JS -->    
+    <!-- BEGIN PAGE LEVEL JS -->
     <script src="~/js/main.js"></script>
     <!-- END PAGE LEVEL JS -->
 

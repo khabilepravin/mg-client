@@ -12,6 +12,7 @@ namespace client.Controllers
 {
     public class AccountController : Controller
     {
+        [Route("/account/login")]
         public async Task Login(string returnUrl = "/")
         {
             await HttpContext.ChallengeAsync("Auth0", new AuthenticationProperties() { RedirectUri = returnUrl });

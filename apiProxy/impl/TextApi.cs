@@ -16,5 +16,11 @@ namespace apiProxy.impl
             return await _baseUrl.AppendPathSegment("text/mediatext").AppendPathSegment(mediaId)
                             .GetJsonAsync<IEnumerable<MediaText>>();
         }
+
+        public async Task<IEnumerable<MediaText>> GetSurroundingText(string textId)
+        {
+            return await _baseUrl.AppendPathSegment($"text/{textId}")
+                            .GetJsonAsync<IEnumerable<MediaText>>();
+        }
     }
 }

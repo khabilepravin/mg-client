@@ -31,17 +31,18 @@ namespace client.Controllers
             return View();
         }
 
-        [Route("callback")]
-        public IActionResult Callback(string token)
-        {
-            //var c = User.Identity;
+        //[Route("callback")]
+        //public IActionResult Callback(string code, string state)
+        //{
+        //    var c = User.Identity.IsAuthenticated;
+        //    var un = User.Identity.Name;
 
-            var s = new { Token = token };
-            //if (User.Identity.IsAuthenticated)
-                //string idToken = await HttpContext.GetTokenAsync("id_token");
+        //    var s = new { Token = state };
+        //    //if (User.Identity.IsAuthenticated)
+        //    //string idToken = await HttpContext.GetTokenAsync("id_token");
 
-            return View("Callback", s);
-        }
+        //    return View("Callback");
+        //}
 
         public IActionResult About()
         {

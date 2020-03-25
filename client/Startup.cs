@@ -3,6 +3,7 @@ using apiProxy;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +11,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace client
@@ -40,7 +45,6 @@ namespace client
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            #region Auth0 code
             // Add authentication services
             services.AddAuthentication(options => {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -48,58 +52,62 @@ namespace client
                 options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             })
             .AddCookie()
-            .AddOpenIdConnect("Auth0", options => {
-                // Set the authority to your Auth0 domain
-                options.Authority = $"https://{Configuration["Auth0:Domain"]}";
-
+            .AddOAuth("Auth0", options => {
                 // Configure the Auth0 Client ID and Client Secret
                 options.ClientId = Configuration["Auth0:ClientId"];
                 options.ClientSecret = Configuration["Auth0:ClientSecret"];
-
-                // Set response type to code
-                options.ResponseType = "code";
-
-                // Configure the scope
-                options.Scope.Clear();
-                options.Scope.Add("openid");
 
                 // Set the callback path, so Auth0 will call back to http://localhost:3000/callback
                 // Also ensure that you have added the URL as an Allowed Callback URL in your Auth0 dashboard
                 options.CallbackPath = new PathString("/callback");
 
-                // Configure the Claims Issuer to be Auth0
-                options.ClaimsIssuer = "Auth0";
+                // Configure the Auth0 endpoints
+                options.AuthorizationEndpoint = $"https://{Configuration["Auth0:Domain"]}/authorize";
+                options.TokenEndpoint = $"https://{Configuration["Auth0:Domain"]}/oauth/token";
+                options.UserInformationEndpoint = $"https://{Configuration["Auth0:Domain"]}/userinfo";
 
-                // Saves tokens to the AuthenticationProperties
+                // To save the tokens to the Authentication Properties we need to set this to true
+                // See code in OnTicketReceived event below to extract the tokens and save them as Claims
                 options.SaveTokens = true;
 
-                options.Events = new OpenIdConnectEvents
-                {
-                    // handle the logout redirection 
-                    OnRedirectToIdentityProviderForSignOut = (context) =>
-                    {
-                        var logoutUri = $"https://{Configuration["Auth0:Domain"]}/v2/logout?client_id={Configuration["Auth0:ClientId"]}";
+                // Set scope to openid. See https://auth0.com/docs/scopes
+                options.Scope.Clear();
+                options.Scope.Add("openid");
+                options.Scope.Add("profile");
 
-                        var postLogoutUri = context.Properties.RedirectUri;
-                        if (!string.IsNullOrEmpty(postLogoutUri))
+                options.Events = new OAuthEvents
+                {
+                    // When creating a ticket we need to manually make the call to the User Info endpoint to retrieve the user's information,
+                    // and subsequently extract the user's ID and email adddress and store them as claims
+                    OnCreatingTicket = async context =>
+                    {
+                        // Retrieve user info
+                        var request = new HttpRequestMessage(HttpMethod.Get, context.Options.UserInformationEndpoint);
+                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
+                        request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                        var response = await context.Backchannel.SendAsync(request, context.HttpContext.RequestAborted);
+                        response.EnsureSuccessStatusCode();
+
+                        // Extract the user info object
+                        var user = JObject.Parse(await response.Content.ReadAsStringAsync());
+
+                        // Add the Name Identifier claim
+                        var userId = user.Value<string>("sub");
+                        if (!string.IsNullOrEmpty(userId))
                         {
-                            if (postLogoutUri.StartsWith("/"))
-                            {
-                                // transform to absolute
-                                var request = context.Request;
-                                postLogoutUri = request.Scheme + "://" + request.Host + request.PathBase + postLogoutUri;
-                            }
-                            logoutUri += $"&returnTo={ Uri.EscapeDataString(postLogoutUri)}";
+                            context.Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, userId, ClaimValueTypes.String, context.Options.ClaimsIssuer));
                         }
 
-                        context.Response.Redirect(logoutUri);
-                        context.HandleResponse();
-
-                        return Task.CompletedTask;
+                        // Add the Name claim
+                        var email = user.Value<string>("name");
+                        if (!string.IsNullOrEmpty(email))
+                        {
+                            context.Identity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, email, ClaimValueTypes.String, context.Options.ClaimsIssuer));
+                        }
                     }
                 };
             });
-            #endregion Auth0 code
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -135,7 +143,7 @@ namespace client
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 //routes.MapRoute(
