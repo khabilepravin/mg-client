@@ -1,0 +1,62 @@
+﻿@model apiProxy.Models.Media
+@{
+    ViewData["Title"] = "Upload Media";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="page-section" id="media">
+    <div class="d-xl-none">
+        <button class="btn btn-danger btn-floated" type="button" data-toggle="sidebar"><i class="fa fa-th-list"></i></button>
+    </div><!-- .card -->
+    <section id="base-style" class="card">
+        <!-- .card-body -->
+        <div class="card-body center-block">
+            <!-- .form -->
+            <form method="post" enctype="multipart/form-data" asp-controller="media" asp-action="postmedia">
+                <fieldset>
+                    <legend>Upload Subtitle File</legend>
+                    <div class="form-group">
+                        <label for="tf1">Name</label>
+                        <input type="text" class="form-control" asp-for="Name" aria-describedby="tf1Help" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="tf2">Plot</label>
+                        <input type="text" class="form-control" asp-for="Description" placeholder="Plot">
+                    </div>
+                    <div class="form-group">
+                        <label for="tf2">Season</label>
+                        <input type="number" class="form-control" asp-for="Season" placeholder="Season">
+                    </div>
+                    <div class="form-group">
+                        <label for="tf2">Episode</label>
+                        <input type="number" class="form-control" asp-for="Episode" placeholder="Episode">
+                    </div>
+                    <div class="form-group">
+                        <label for="tf2">Release Year</label> 
+                        <input type="date" maxlength="4" asp-for="ReleaseDate" class="form-control" placeholder="Release Year">
+                    </div>
+                    <div class="form-group">
+                        <label for="tf3">Subtitle File</label>
+                        <div class="custom-file">
+                            <input type="file" name="FilesubtitleFile" class="custom-file-input"> 
+                            <label class="custom-file-label" for="tf3">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                        <input type="button" class="btn btn-danger" value="Cancel" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+</section>
+@section Scripts {
+
+    <environment names="Development">
+        <script type="text/javascript" src="@Url.Content("~/js/media.js")" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="text/javascript" src="@Url.Content("~/js/media.js")" asp-append-version="true"></script>
+    </environment>
+}
