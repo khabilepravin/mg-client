@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- End Required meta tags -->
     <!-- Begin SEO tag -->
     <title>@ViewData["Title"]</title>
-    <meta property="og:title" content="Fullwidth Page Layout">
+    <meta property="og:title" content="@ViewData["MetaTitle"]">
     <meta name="author" content="Pravin Khabile">
     <meta property="og:locale" content="en_US">
-    <meta name="description" content="Movie and television quotes and dialogs">
-    <meta property="og:description" content="Movie and television quotes and dialogs">
+    <meta name="description" content="@ViewData["MetaDescription"]">
+    <meta property="og:description" content="@ViewData["MetaDescription"]">
     <meta property="og:site_name" content="MovieGrep ">
     <script type="application/ld+json">
         {
@@ -47,7 +47,7 @@
         unusedLink.setAttribute('rel', '');
         unusedLink.setAttribute('disabled', true);
 
-        var baseUrl = 'https://localhost:44378';
+        var baseUrl = 'https://localhost:44347';
 
     </script><!-- END THEME STYLES -->
 </head>

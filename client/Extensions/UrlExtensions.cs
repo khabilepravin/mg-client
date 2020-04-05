@@ -10,7 +10,7 @@ namespace client.Extensions
             var mediaName = StringExtensions.ToLowerWithKebabCase(Convert.ToString(media["name"]));
             var id = Convert.ToString(media["id"]);
 
-            return $"{mediaType}/{id}/{mediaName}/popularquotes";
+            return $"{mediaType}/{id}/{mediaName}/popular-quotes";
         }
     }
 }

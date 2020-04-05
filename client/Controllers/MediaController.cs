@@ -1,5 +1,6 @@
 ﻿using apiProxy.impl;
 using apiProxy.Models;
+using client.Models;
 using client.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace client.Controllers
         }
 
 
-        [Route("/{mediaType}/{mediaId}/{name}/popularquotes")]
+        [Route("/{mediaType}/{mediaId}/{name}/popular-quotes")]
         [HttpGet]
         public async Task<IActionResult> GetPopularTextFromMediaId([FromRoute]string mediaType, [FromRoute]string mediaId, [FromRoute]string name)
         {
@@ -59,7 +60,8 @@ namespace client.Controllers
         {
             var response = await _searchApi.SearchMedia(name);
 
-            return View("SearchResults", response);
+
+            return View("SearchResults", new MediaSearchResult() { MediaName = name, Results = response });
         }
 
         [Route("/movies/search/{id}/{searchText}")]
