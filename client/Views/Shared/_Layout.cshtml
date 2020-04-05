@@ -135,9 +135,6 @@
                         {
                             <div class="dropdown">
                                 <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="user-avatar user-avatar-md">
-                                        <img src="@User.Claims.FirstOrDefault(c => c.Type == "picture")?.Value" alt="">
-                                    </span>
                                     <span class="account-summary pr-lg-4 d-none d-lg-block">
                                         <span class="account-name">@User.Identity.Name</span>
 
