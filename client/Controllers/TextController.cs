@@ -20,7 +20,8 @@ namespace client.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Details(string id)
+        [Route("/text/details/{id}")]
+        public async Task<IActionResult> Details([FromRoute]string id)
         {
             var result = await _textApi.GetSurroundingText(id);
 

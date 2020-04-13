@@ -1,0 +1,22 @@
+﻿@using Newtonsoft.Json.Linq;
+@model List<JObject>
+@{
+    ViewData["Title"] = "SearchWithin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchWithin</h2>
+
+@foreach (var result in Model)
+{ 
+<div>
+    <a href="/text/details/@Convert.ToString(result["id"])" class="list-group-item list-group-item-action">
+        <div class="list-group-item-figure">
+            <div class="tile @(Convert.ToBoolean(result["isPartofFavorite"]) ? "bg-success" : "")">
+                <span class="fas fa-star"></span>
+            </div>
+        </div>
+        <div class="list-group-item-body">@Convert.ToString(result["text"])</div>
+    </a>
+</div>
+}

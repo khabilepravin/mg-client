@@ -64,13 +64,13 @@ namespace client.Controllers
             return View("SearchResults", new MediaSearchResult() { MediaName = name, Results = response });
         }
 
-        [Route("/movies/search/{id}/{searchText}")]
+        [Route("/movies/search-in/{id}/{searchText}")]
         [HttpGet]
         public async Task<IActionResult> SearchTextInMovies([FromRoute]string id, [FromRoute]string searchText)
         {
             var response = await _searchApi.SearchTextInMedia(id, searchText);
 
-            return Ok(response);
+            return View("SearchWithin", response);
         }
     }
 }

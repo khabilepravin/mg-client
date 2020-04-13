@@ -1,0 +1,33 @@
+﻿@model IEnumerable<apiProxy.Models.MediaText>;
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Conversation</h4>
+<section role="log" class="conversations">
+    <ul class="conversation-list">
+        @{
+            string conversationClass = "";
+            foreach (var text in Model)
+            {
+
+                conversationClass = conversationClass == "conversation-inbound" ? "conversation-outbound" : "conversation-inbound";
+                <li class="@conversationClass">
+                    <div class="conversation-avatar">
+                        <a href="#!" class="tile tile-circle bg-muted">
+                            <i class="oi oi-person"></i>
+                        </a>
+                    </div>
+                    <div class="conversation-message">
+                        <div class="conversation-message-text">@text.text</div>
+                    </div>
+                    <div class="conversation-actions dropdown">
+
+                    </div>
+                </li>
+
+            }
+        }
+    </ul>
+</section>
