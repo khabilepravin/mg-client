@@ -37,21 +37,21 @@
     <link rel="stylesheet" href="~/css/vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="~/css/vendor/flatpickr/flatpickr.min.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link rel="stylesheet" href="~/css/theme/theme.min.css" data-skin="default">
+    @*<link rel="stylesheet" href="~/css/theme/theme.min.css" data-skin="default">*@
     <link rel="stylesheet" href="~/css/theme/theme-dark.min.css" data-skin="dark">
     <link rel="stylesheet" href="~/css/theme/custom.css"><!-- Disable unused skin immediately -->
     <script>
-        var skin = localStorage.getItem('skin') || 'default';
-        var unusedLink = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
+        //var skin = localStorage.getItem('skin') || 'default';
+        //var unusedLink = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
 
-        unusedLink.setAttribute('rel', '');
-        unusedLink.setAttribute('disabled', true);
+        //unusedLink.setAttribute('rel', '');
+        //unusedLink.setAttribute('disabled', true);
 
         var baseUrl = 'https://localhost:44347';
 
     </script><!-- END THEME STYLES -->
 </head>
-<body>
+<body class="dark-skin pace-done">
     <div class="app has-fullwidth" id="mainApp">
         <!--[if lt IE 10]>
         <div class="page-message" role="alert">You are using an <strong>outdated</strong> browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
@@ -64,7 +64,7 @@
                 <div class="top-bar-brand bg-transparent">
                     <!-- toggle menu -->
                     <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside" aria-label="toggle menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle menu -->
-                    <a href="/">
+                    <a href="">
                         MovieGrep
                         <img src="~/images/logo-nobackground.png" alt="" style="height: 50px;width: auto;">
                     </a>
@@ -225,7 +225,7 @@
                     }
                     <!-- .top-bar-brand -->
                     <div class="top-bar-brand bg-primary">
-                        <a href="index.html">
+                        <a href="/">
                             @*<img src="~/images/brand-inverse.png" height="32" alt="">*@
                             <span>MovieGrep</span>
                         </a>

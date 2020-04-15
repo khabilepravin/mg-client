@@ -4,32 +4,36 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Conversation</h4>
-<div class="card card-fluid mb-0">
-    <section role="log" class="conversations">
-        <ul class="conversation-list">
-            @{
-                string conversationClass = "";
-                foreach (var text in Model)
-                {
+<div class="card">
+    <div class="card-body">
+        <h4>Conversation</h4>
+        @*<div class="card card-fluid mb-0">*@
+            <section role="log" class="conversations">
+                <ul class="conversation-list">
+                    @{
+                        string conversationClass = "";
+                        foreach (var text in Model)
+                        {
 
-                    conversationClass = conversationClass == "conversation-inbound" ? "conversation-outbound" : "conversation-inbound";
-                    <li class="@conversationClass">
-                        <div class="conversation-avatar">
-                            <a href="#!" class="tile tile-circle bg-muted">
-                                <i class="oi oi-person"></i>
-                            </a>
-                        </div>
-                        <div class="conversation-message">
-                            <div class="conversation-message-text">@text.text</div>
-                        </div>
-                        <div class="conversation-actions dropdown">
+                            conversationClass = conversationClass == "conversation-inbound" ? "conversation-outbound" : "conversation-inbound";
+                            <li class="@conversationClass">
+                                <div class="conversation-avatar">
+                                    <a href="#!" class="tile tile-circle bg-muted">
+                                        <i class="oi oi-person"></i>
+                                    </a>
+                                </div>
+                                <div class="conversation-message">
+                                    <div class="conversation-message-text">@text.text</div>
+                                </div>
+                                <div class="conversation-actions dropdown">
 
-                        </div>
-                    </li>
+                                </div>
+                            </li>
 
-                }
-            }
-        </ul>
-    </section>
+                        }
+                    }
+                </ul>
+            </section>
+        @*</div>*@
+    </div>
 </div>

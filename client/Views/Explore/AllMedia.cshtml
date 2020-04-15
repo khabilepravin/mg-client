@@ -4,20 +4,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="page-inner">
-    <h5>Explore</h5>
-    <div class="list-group list-group-bordered mb-3">
-        @foreach (var result in Model)
-        {
-            
-            <a href="~/@UrlExtensions.GetPopularQuotesUrl(result)" class="list-group-item list-group-item-action">
-                <div class="list-group-item-figure">
-                    <div class="tile bg-success">
-                        <span class="fas fa-@(Convert.ToInt32(result["season"]) > 0 ? "tv" : "film")"></span>
+<div class="card">
+    <div class="card-body">
+        <h5>Explore</h5>
+        <div class="list-group list-group-bordered mb-3">
+            @foreach (var result in Model)
+            {
+
+                <a href="~/@UrlExtensions.GetPopularQuotesUrl(result)" class="list-group-item list-group-item-action">
+                    <div class="list-group-item-figure">
+                        <div class="tile bg-success">
+                            <span class="fas fa-@(Convert.ToInt32(result["season"]) > 0 ? "tv" : "film")"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="list-group-item-body">@result["name"]</div>
-            </a>
-        }
+                    <div class="list-group-item-body">@result["name"]</div>
+                </a>
+            }
+        </div>
     </div>
 </div>

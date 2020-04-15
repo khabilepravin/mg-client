@@ -17,11 +17,7 @@ var app = new Vue({
         },
         searchWithinTitle(event) {
             if (event.code === 'Enter' || event.code === 'NumpadEnter') {
-                var id = this.getMediaId();
-                //axios.get(`${baseUrl}/movies/search/${id}/${this.$data.searchTextWithinTitle}`).then(({ data }) => {
-                //    this.$data.searchWithinTitleResult = data;
-                //    console.log(this.$data.searchWithinTitleResult);
-                //});
+                var id = this.getMediaId();         
                 window.location.href = `${baseUrl}/movies/search-in/${id}/${this.$data.searchTextWithinTitle}`;
             }
         },
